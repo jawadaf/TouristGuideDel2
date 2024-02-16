@@ -1,10 +1,10 @@
 package com.example.touristguidedel2.model;
 
-public class TouristAttractions {
+public class TouristAttraction {
         private String name;
         private String description;
 
-        public TouristAttractions(String name, String description) {
+        public TouristAttraction(String name, String description) {
             this.name = name;
             this.description = description;
         }
