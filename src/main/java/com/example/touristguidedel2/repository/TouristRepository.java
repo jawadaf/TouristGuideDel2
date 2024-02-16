@@ -32,9 +32,17 @@ public class TouristRepository {
         data.add(touristAttraction);
     }
 
-    public void saveName(TouristAttraction touristAttraction) {
+    public void save(TouristAttraction touristAttraction) {
         if (touristAttraction != null) {
+            data.contains(touristAttraction);
+        }
+    }
 
+    public void edit(String name, String description) {
+        for (TouristAttraction touristAttraction : data) {
+            if (touristAttraction.getName().equalsIgnoreCase(name)) {
+                touristAttraction.setDescription(description);
+            }
         }
     }
 

@@ -22,8 +22,18 @@ public class TouristService {
         return touristRepository.getByName(name);
     }
 
-    public void create(TouristAttraction touristAttraction) {
+    public TouristAttraction create(TouristAttraction touristAttraction) {
         touristRepository.create(touristAttraction);
+        return touristAttraction;
+    }
+
+    public void save(TouristAttraction touristAttraction) {
+        touristRepository.save(touristAttraction);
+    }
+
+    public TouristAttraction edit(String name, String description) {
+        touristRepository.edit(name, description);
+        return new TouristAttraction(name, description);
     }
 
     public void update(TouristAttraction touristAttraction) {
@@ -36,8 +46,6 @@ public class TouristService {
             touristRepository.delete(touristAttraction);
         }
     }
-
-
 
 }
 
