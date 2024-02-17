@@ -23,14 +23,14 @@ public class TouristController {
     @GetMapping("")
     public String getAll(Model model) {
         model.addAttribute("attractions", touristService.getAll());
-        return "attractionsList";
+        return "attractions-List";
     }
 
     @GetMapping("/{name}")
     public String getByName(@PathVariable String name, Model model) {
         if (touristService.getByName(name) != null) {
             model.addAttribute("attractions", touristService.getByName(name));
-            return "attractionsDetails";
+            return "attractions-Details";
         } else {
             return "error";
         }
@@ -39,23 +39,31 @@ public class TouristController {
     @GetMapping("/add")
     public String create(TouristAttraction touristAttraction, Model model) {
         model.addAttribute("attractions", touristService.create(touristAttraction));
-        return "addAttraction";
+        return "added-Attraction";
     }
 
     @PostMapping("/save")
     public String save(@ModelAttribute TouristAttraction touristAttraction) {
         touristService.save(touristAttraction);
-        return "saveAttraction";
+        return "saved-Attraction";
     }
 
     @GetMapping("/edit/{name}")
     public String edit(String name, String description, Model model) {
         model.addAttribute(touristService.edit(name, description));
-        return "editAttraction";
+        return "edited-Attraction";
     }
 
+    @PostMapping("/update")
+    public String update(@RequestBody TouristAttraction touristAttraction) {
+        touristService.update(touristAttraction);
+        return "updated-Attraction";
+    }
 
-
-
-
+    @GetMapping("/delete")
+    public String delete(@RequestParam String name, Model model) {
+        touristService.delete(name);
+        model.addAttribute("delitedAttractionName", name);
+        return "deleted-Attraction";
+    }
 }
