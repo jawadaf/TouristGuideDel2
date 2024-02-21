@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Tourist Attractions</title>
-    <link rel="stylesheet" type="text/css" href="/attractions.css">
+    <link th:href="@{/main.css}" rel="stylesheet">
 </head>
 
 <body>
@@ -11,19 +11,33 @@
 <p th:text="${attractions.size()}"></p>
 
 <table>
-
-    <tr>
-        <th>Name:</th>
-        <th>Description:</th>
-    </tr>
-
-    <tr th:each="attraction : ${attractions}">
-        <td th:text="${attraction.name}"></td>
-        <td th:text="${attraction.description}"></td>
-    </tr>
-
+    <thead>
+        <tr>
+            <th>Name:</th>
+            <th>Description:</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="attraction : ${attractions}">
+            <td th:text="${attraction.name}"></td>
+            <td th:text="${attraction.description}"></td>
+            <td th:text="${at}"></td>
+            <td>
+                <a th:href="@{'attractions/' + ${attraction.name} + '/tags'}">
+                    <input type="button" value="Tags">
+                </a>
+            </td>
+        </tr>
+    </tbody>
 
 </table>
+
+<form action="/attractions/add" method="get">
+    <button type="submit">Tilføj attraktion</button>
+</form>
+
+
 </body>
 
 </html>

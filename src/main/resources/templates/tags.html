@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Tags for attractions</title>
+    <link th:href="@{/main.css}" rel="stylesheet">
 </head>
+
 <body>
 
+<h1>Tags for attractions</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>City</th>
+        <th>Tags</th>
+    </tr>
+    <tr th:each="tag : ${tags}">
+        <td th:text="${attraction.name}"></td>
+        <td th:text="${attraction.description}"></td>
+        <td th:text="${attraction.city}"></td>
+        <td>
+            <ul>
+                <li th:each="tag : ${attraction.tagList}" th:text="${tag}"></li>
+            </ul>
+        </td>
+    </tr>
+</table>
+
+<button type="submit">Tilbage</button>
+
 </body>
+
 </html>

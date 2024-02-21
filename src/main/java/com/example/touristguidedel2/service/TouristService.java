@@ -31,9 +31,9 @@ public class TouristService {
         touristRepository.save(touristAttraction);
     }
 
-    public TouristAttraction edit(String name, String description) {
-        touristRepository.edit(name, description);
-        return new TouristAttraction(name, description);
+    public TouristAttraction edit(String name, String description, String city, List<String> tagList) {
+        touristRepository.edit(name, description, city, tagList);
+        return new TouristAttraction(name, description, city, tagList);
     }
 
     public void update(TouristAttraction touristAttraction) {
@@ -45,6 +45,14 @@ public class TouristService {
         if (touristAttraction != null) {
             touristRepository.delete(touristAttraction);
         }
+    }
+
+    public List<String> getNameByTag(String name) {
+        return touristRepository.getNamebyTag(name);
+    }
+
+    public List<String> attractionTagsList(String touristAttractionName) {
+        return touristRepository.attractionTagsList(touristAttractionName);
     }
 
 }

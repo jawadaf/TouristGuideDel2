@@ -6,8 +6,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
-@RequestMapping("/attractions")
+@RequestMapping("attractions")
 public class TouristController {
     private TouristService touristService;
 
@@ -15,10 +17,12 @@ public class TouristController {
         this.touristService = touristService;
     }
 
-    @GetMapping("/")
+    /*@GetMapping("/")
     public String index() {
         return "index";
     }
+
+     */
 
     @GetMapping("")
     public String getAll(Model model) {
@@ -39,31 +43,39 @@ public class TouristController {
     @GetMapping("/add")
     public String create(TouristAttraction touristAttraction, Model model) {
         model.addAttribute("attractions", touristService.create(touristAttraction));
-        return "added-Attraction";
+        return "add";
     }
 
     @PostMapping("/save")
     public String save(@ModelAttribute TouristAttraction touristAttraction) {
         touristService.save(touristAttraction);
-        return "saved-Attraction";
+        return "save";
     }
 
     @GetMapping("/edit/{name}")
-    public String edit(String name, String description, Model model) {
-        model.addAttribute(touristService.edit(name, description));
-        return "edited-Attraction";
+    public String edit(String name, String description, String city, List<String> tagList, Model model) {
+        model.addAttribute(touristService.edit(name, description, city, tagList));
+        return "edit";
     }
 
     @PostMapping("/update")
     public String update(@RequestBody TouristAttraction touristAttraction) {
         touristService.update(touristAttraction);
-        return "updated-Attraction";
+        return "update";
     }
 
     @GetMapping("/delete")
     public String delete(@RequestParam String name, Model model) {
         touristService.delete(name);
         model.addAttribute("delitedAttractionName", name);
-        return "deleted-Attraction";
+        return "delete";
     }
+
+    @GetMapping("/{name}/tags")
+    public String getNameByTag(@PathVariable("name") String name, Model model) {
+        model.addAttribute("tags", touristService.attractionTagsList(name));
+        return "tags";
+    }
+
+
 }
