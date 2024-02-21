@@ -16,7 +16,6 @@
         <tr>
             <th>Name:</th>
             <th>Description:</th>
-            <th>Tags</th>
         </tr>
     </thead>
     <tbody>
@@ -26,6 +25,20 @@
             <td>
                 <a th:href="@{'attractions/' + ${attraction.name} + '/tags'}">
                     <input type="button" value="Tags">
+                </a>
+            </td>
+            <td>
+                <a>
+                <form action="/attractions/delete" method="get">
+                    <button type="submit">Delete</button>
+                </form>
+                </a>
+            </td>
+            <td>
+                <a>
+                <form action="/attractions/edit" method="get">
+                    <button type="submit">Edit</button>
+                </form>
                 </a>
             </td>
         </tr>

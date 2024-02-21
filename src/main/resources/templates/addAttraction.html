@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add ttraction</title>
+    <link th:href="@{/main.css}" rel="stylesheet">
+</head>
+<body>
+
+<h1>Add attraction</h1>
+<ul>
+    <li>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="user_name" />
+    </li>
+
+    <li>
+        <label for="mail">Description:</label>
+        <input type="text" id="mail" name="user_mail" />
+    </li>
+</ul>
+
+<fieldset>
+    <legend>City</legend>
+    <p>
+        <select>
+            <option value="">København</option>
+            <option value="">Aarhus</option>
+            <option value="">Aalborg</option>
+            <option value="">Odense</option>
+            <option value="">Esbjerg</option>
+        </select>
+    </p>
+</fieldset>
+
+
+<fieldset>
+    <legend>Tags</legend>
+    <p>
+        <input type="radio" name="size" id="size_1" value="small">
+        <label for="size_1">Børnevelig</label>
+
+        <input type="radio" name="size" id="size_2" value="madium">
+        <label for="size_2">Gratis</label>
+
+        <input type="radio" name="size" id="size_3" value="large">
+        <label for="size_3">Kunst</label>
+
+        <input type="radio" name="size" id="size_4" value="ridiculous">
+        <label for="size_4">Museum</label>
+
+        <input type="radio" name="size" id="size_5" value="ridiculous">
+        <label for="size_4">Natur</label>
+    </p>
+</fieldset>
+
+<button>
+    <a href="http://localhost:8080/attractions" type="submit">Add attraction</a>
+</button>
+
+<button>
+    <a href="http://localhost:8080/attractions" type="submit">Regret</a>
+</button>
+
+
+</body>
+</html>
