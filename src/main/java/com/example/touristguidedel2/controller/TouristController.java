@@ -41,8 +41,8 @@ public class TouristController {
     }
 
     @GetMapping("/add")
-    public String create(TouristAttraction touristAttraction, Model model) {
-        model.addAttribute("attractions", touristService.create(touristAttraction));
+    public String addAttraction(TouristAttraction touristAttraction, Model model) {
+        model.addAttribute("attractions", touristService.addAttraction(touristAttraction));
         return "add";
     }
 
@@ -71,9 +71,23 @@ public class TouristController {
         return "delete";
     }
 
-    @GetMapping("/{name}/tags")
+    /*@GetMapping("/{name}/tags")
     public String getNameByTag(@PathVariable("name") String name, Model model) {
         model.addAttribute("tags", touristService.attractionTagsList(name));
+        return "tags";
+    }
+
+     */
+    @GetMapping("/{name}/tags")
+    public String getAttractionTags(Model model, @PathVariable String name ){
+        List<TouristAttraction> touristAttractions = touristService.getAll();
+        TouristAttraction attraction = null;
+        for(TouristAttraction touristAttraction : touristAttractions){
+            if(touristAttraction.getName().equals(name)){
+                attraction = touristAttraction;
+            }
+        }
+        model.addAttribute("attraction", attraction);
         return "tags";
     }
 

@@ -2,13 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/3942/3942076.png">
     <title>Tags for attractions</title>
     <link th:href="@{/main.css}" rel="stylesheet">
 </head>
 
 <body>
 
-<h1>Tags for attractions</h1>
+<h1>Tags for den valgte attraction</h1>
 
 <table>
     <tr>
@@ -17,19 +18,18 @@
         <th>City</th>
         <th>Tags</th>
     </tr>
-    <tr th:each="tag : ${tags}">
-        <td th:text="${attraction.name}"></td>
-        <td th:text="${attraction.description}"></td>
-        <td th:text="${attraction.city}"></td>
-        <td>
-            <ul>
-                <li th:each="tag : ${attraction.tagList}" th:text="${tag}"></li>
-            </ul>
-        </td>
+
+    <tr th:each="attractions : ${attraction}">
+        <td th:text="${attractions.name}"></td>
+        <td th:text="${attractions.description}"></td>
+        <td th:text="${attractions.city}"></td>
+        <td th:text="${attractions.tagList}"></td>
     </tr>
 </table>
 
-<button type="submit">Tilbage</button>
+<button>
+<a href="http://localhost:8080/attractions" type="submit">Tilbage</a>
+</button>
 
 </body>
 

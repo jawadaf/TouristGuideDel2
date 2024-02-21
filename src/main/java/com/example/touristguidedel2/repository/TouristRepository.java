@@ -28,7 +28,7 @@ public class TouristRepository {
         return null;
     }
 
-    public void create(TouristAttraction touristAttraction) {
+    public void addAttraction(TouristAttraction touristAttraction) {
         data.add(touristAttraction);
     }
 
@@ -58,7 +58,7 @@ public class TouristRepository {
         data.removeIf(attraction -> attraction.getName().equals(touristAttraction.getName()));
     }
 
-    public List<String> getNamebyTag(String name) {
+    public List<String> getNameByTag(String name) {
         for (TouristAttraction touristAttraction : data) {
             if (touristAttraction.getName().equals(name)) {
                 return touristAttraction.getTagList();
@@ -66,16 +66,6 @@ public class TouristRepository {
         }
         return Collections.emptyList();
     }
-
-    public List<String> attractionTagsList(String touristAttractionName){
-        for (TouristAttraction touristAttraction : data){
-            if (touristAttraction.getName().contains(touristAttractionName)){
-                return touristAttraction.getTagList();
-            }
-        }
-        return null;
-    }
-
 
 
 }

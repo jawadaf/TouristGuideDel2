@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/3942/3942076.png">
     <title>Tourist Attractions</title>
     <link th:href="@{/main.css}" rel="stylesheet">
 </head>
@@ -15,14 +16,13 @@
         <tr>
             <th>Name:</th>
             <th>Description:</th>
-            <th>City</th>
+            <th>Tags</th>
         </tr>
     </thead>
     <tbody>
         <tr th:each="attraction : ${attractions}">
             <td th:text="${attraction.name}"></td>
             <td th:text="${attraction.description}"></td>
-            <td th:text="${at}"></td>
             <td>
                 <a th:href="@{'attractions/' + ${attraction.name} + '/tags'}">
                     <input type="button" value="Tags">

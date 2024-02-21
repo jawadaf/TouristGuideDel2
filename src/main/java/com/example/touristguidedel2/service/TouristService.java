@@ -22,8 +22,8 @@ public class TouristService {
         return touristRepository.getByName(name);
     }
 
-    public TouristAttraction create(TouristAttraction touristAttraction) {
-        touristRepository.create(touristAttraction);
+    public TouristAttraction addAttraction(TouristAttraction touristAttraction) {
+        touristRepository.addAttraction(touristAttraction);
         return touristAttraction;
     }
 
@@ -48,12 +48,9 @@ public class TouristService {
     }
 
     public List<String> getNameByTag(String name) {
-        return touristRepository.getNamebyTag(name);
+        return touristRepository.getNameByTag(name);
     }
 
-    public List<String> attractionTagsList(String touristAttractionName) {
-        return touristRepository.attractionTagsList(touristAttractionName);
-    }
 
 }
 
