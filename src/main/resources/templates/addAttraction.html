@@ -37,6 +37,7 @@
 <fieldset>
     <legend>Tags</legend>
     <p>
+
         <input type="radio" name="size" id="size_1" value="small">
         <label for="size_1">Børnevelig</label>
 
@@ -55,7 +56,9 @@
 </fieldset>
 
 <button>
+    <form action="/attractions/add" method="post">
     <a href="http://localhost:8080/attractions" type="submit">Add attraction</a>
+    </form>
 </button>
 
 <button>
