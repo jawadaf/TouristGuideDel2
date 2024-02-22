@@ -8,6 +8,7 @@
 <body>
 
 <h1>Add attraction</h1>
+<form action="/attractions/add" method="post">
 <ul>
     <li>
         <label for="name">Name:</label>
@@ -38,27 +39,27 @@
     <legend>Tags</legend>
     <p>
 
-        <input type="radio" name="size" id="size_1" value="small">
+        <input type="radio" name="size" id="size_1" value="børnevenlig">
         <label for="size_1">Børnevelig</label>
 
-        <input type="radio" name="size" id="size_2" value="madium">
+        <input type="radio" name="size" id="size_2" value="gratis">
         <label for="size_2">Gratis</label>
 
-        <input type="radio" name="size" id="size_3" value="large">
+        <input type="radio" name="size" id="size_3" value="kunst">
         <label for="size_3">Kunst</label>
 
-        <input type="radio" name="size" id="size_4" value="ridiculous">
+        <input type="radio" name="size" id="size_4" value="museum">
         <label for="size_4">Museum</label>
 
-        <input type="radio" name="size" id="size_5" value="ridiculous">
+        <input type="radio" name="size" id="size_5" value="natur">
         <label for="size_4">Natur</label>
     </p>
 </fieldset>
 
 <button>
-    <form action="/attractions/add" method="post">
+
     <a href="http://localhost:8080/attractions" type="submit">Add attraction</a>
-    </form>
+</form>
 </button>
 
 <button>
