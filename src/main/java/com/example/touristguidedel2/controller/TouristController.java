@@ -46,16 +46,16 @@ public class TouristController {
         return "addAttraction";
     }
 
-    @PostMapping("/save")
+    @PostMapping("/add")
     public String save(@ModelAttribute TouristAttraction touristAttraction) {
         touristService.save(touristAttraction);
-        return "save";
+        return "redirect:/attractions";
     }
 
-    @GetMapping("/edit/{name}")
-    public String edit(String name, String description, String city, List<String> tagList, Model model) {
+    @PostMapping("/edit/{name}")
+    public String edit(@PathVariable String name, String description, String city, List<String> tagList, Model model) {
         model.addAttribute(touristService.edit(name, description, city, tagList));
-        return "edit";
+        return "attractions";
     }
 
     @PostMapping("/update")
@@ -64,11 +64,11 @@ public class TouristController {
         return "update";
     }
 
-    @GetMapping("/delete")
-    public String delete(@RequestParam String name, Model model) {
+    @GetMapping("/delete/{name}")
+    public String delete(@PathVariable String name, Model model) {
         touristService.delete(name);
-        model.addAttribute("delitedAttractionName", name);
-        return "delete";
+        model.addAttribute("attraction", name);
+        return "redirect:/attractions";
     }
 
     @GetMapping("/{name}/tags")
@@ -83,6 +83,5 @@ public class TouristController {
         model.addAttribute("attraction", attraction);
         return "tags";
     }
-
 
 }

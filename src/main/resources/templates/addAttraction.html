@@ -9,62 +9,58 @@
 
 <h1>Add attraction</h1>
 <form action="/attractions/add" method="post">
-<ul>
-    <li>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="user_name" />
-    </li>
+    <ul>
+        <li>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"/>
+        </li>
 
-    <li>
-        <label for="mail">Description:</label>
-        <input type="text" id="mail" name="user_mail" />
-    </li>
-</ul>
+        <li>
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" />
+        </li>
+    </ul>
 
-<fieldset>
-    <legend>City</legend>
-    <p>
-        <select>
-            <option value="">København</option>
-            <option value="">Aarhus</option>
-            <option value="">Aalborg</option>
-            <option value="">Odense</option>
-            <option value="">Esbjerg</option>
-        </select>
-    </p>
-</fieldset>
+    <fieldset>
+        <legend>City</legend>
+        <p>
+            <select id="city" name="city">
+                <option value="København">København</option>
+                <option value="Aarhus">Aarhus</option>
+                <option value="Aalborg">Aalborg</option>
+                <option value="Odense">Odense</option>
+                <option value="Esbjerg">Esbjerg</option>
+            </select>
+        </p>
+    </fieldset>
 
+    <fieldset>
+        <legend>Tags</legend>
+        <p>
 
-<fieldset>
-    <legend>Tags</legend>
-    <p>
+            <input type="checkbox" name="tagList" id="size_1" value="børnevenlig">
+            <label for="size_1">Børnevenlig</label>
 
-        <input type="radio" name="size" id="size_1" value="børnevenlig">
-        <label for="size_1">Børnevelig</label>
+            <input type="checkbox" name="tagList" id="size_2" value="gratis">
+            <label for="size_2">Gratis</label>
 
-        <input type="radio" name="size" id="size_2" value="gratis">
-        <label for="size_2">Gratis</label>
+            <input type="checkbox" name="tagList" id="size_3" value="kunst">
+            <label for="size_3">Kunst</label>
 
-        <input type="radio" name="size" id="size_3" value="kunst">
-        <label for="size_3">Kunst</label>
+            <input type="checkbox" name="tagList" id="size_4" value="museum">
+            <label for="size_4">Museum</label>
 
-        <input type="radio" name="size" id="size_4" value="museum">
-        <label for="size_4">Museum</label>
+            <input type="checkbox" name="tagList" id="size_5" value="natur">
+            <label for="size_4">Natur</label>
+        </p>
+    </fieldset>
 
-        <input type="radio" name="size" id="size_5" value="natur">
-        <label for="size_4">Natur</label>
-    </p>
-</fieldset>
-
-<button>
-
-    <a href="http://localhost:8080/attractions" type="submit">Add attraction</a>
+    <button type="submit">Add attraction</button>
+    <button> <a href="http://localhost:8080/attractions" type="submit">Regret</a> </button>
 </form>
-</button>
 
-<button>
-    <a href="http://localhost:8080/attractions" type="submit">Regret</a>
-</button>
+
+
 
 
 </body>

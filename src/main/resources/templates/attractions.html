@@ -31,16 +31,16 @@
             </td>
             <td>
                 <a>
-                <form action="/attractions/delete" method="get">
-                    <button type="submit">Delete</button>
+                <form action="/attractions" method="get">
+                    <button type="submit"><a th:href="'/attractions/delete/'+ ${attraction.name}">Delete</a></button>
                 </form>
                 </a>
             </td>
             <td>
                 <a>
-                <form action="/attractions/edit" method="get">
-                    <button type="submit">Edit</button>
-                </form>
+                    <form action="/attractions" method="post">
+                        <button type="submit"><a th:href="'/attractions/edit/'+ ${attraction.name}">Edit</a></button>
+                    </form>
                 </a>
             </td>
         </tr>
