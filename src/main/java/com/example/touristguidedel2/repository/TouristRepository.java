@@ -61,13 +61,19 @@ public class TouristRepository {
         data.removeIf(attraction -> attraction.getName().equals(touristAttraction.getName()));
     }
 
-    public List<String> getNameByTag(String name) {
+    public List<String> getNameByTag() {
         for (TouristAttraction touristAttraction : data) {
-            if (touristAttraction.getName().equals(name)) {
-                return touristAttraction.getTagList();
-            }
+            return touristAttraction.getTagList();
         }
         return Collections.emptyList();
+    }
+
+    public List<String> getCitys() {
+        List<String> cityList = new ArrayList<>();
+        for (TouristAttraction touristAttraction : data) {
+            cityList.add(touristAttraction.getCity());
+        }
+        return cityList;
     }
 
 

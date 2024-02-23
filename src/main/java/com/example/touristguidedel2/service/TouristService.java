@@ -47,8 +47,12 @@ public class TouristService {
         }
     }
 
-    public List<String> getNameByTag(String name) {
-        return touristRepository.getNameByTag(name);
+    public List<String> getNameByTag() {
+        return touristRepository.getNameByTag();
+    }
+
+    public List<String> getCities() {
+        return touristRepository.getCitys();
     }
 
 
