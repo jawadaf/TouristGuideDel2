@@ -52,7 +52,7 @@ public class TouristController {
         return "redirect:/attractions";
     }
 
-    @PostMapping("/edit/{name}")
+    @GetMapping("/edit/{name}")
     public String edit(@PathVariable String name, String description, String city, List<String> tagList, Model model) {
         model.addAttribute(touristService.edit(name, description, city, tagList));
         return "attractions";
