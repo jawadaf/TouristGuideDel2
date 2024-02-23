@@ -63,7 +63,7 @@ public class TouristController {
     @PostMapping("/update")
     public String update(@RequestBody TouristAttraction touristAttraction) {
         touristService.update(touristAttraction);
-        return "update";
+        return "redirect:/attractions";
     }
 
     @GetMapping("/delete/{name}")

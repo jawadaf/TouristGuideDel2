@@ -62,10 +62,8 @@ public class TouristRepository {
     }
 
     public List<String> getNameByTag() {
-        for (TouristAttraction touristAttraction : data) {
-            return touristAttraction.getTagList();
-        }
-        return Collections.emptyList();
+        List<String>allTags = new ArrayList<>(List.of("Biograf", "Bar", "Museum", "Tivoli", "Park", "Børnevenlig"));
+    return allTags;
     }
 
     public List<String> getCities() {
