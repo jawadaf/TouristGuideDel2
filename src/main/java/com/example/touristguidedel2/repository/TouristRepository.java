@@ -68,7 +68,7 @@ public class TouristRepository {
         return Collections.emptyList();
     }
 
-    public List<String> getCitys() {
+    public List<String> getCities() {
         List<String> cityList = new ArrayList<>();
         for (TouristAttraction touristAttraction : data) {
             cityList.add(touristAttraction.getCity());

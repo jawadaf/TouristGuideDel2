@@ -52,7 +52,7 @@ public class TouristService {
     }
 
     public List<String> getCities() {
-        return touristRepository.getCitys();
+        return touristRepository.getCities();
     }
 
 
