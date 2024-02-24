@@ -39,18 +39,7 @@ public class TouristRepository {
         }
     }
 
-    public void edit(String name, String description, String city, List<String> tagList) {
-        for (TouristAttraction touristAttraction : data) {
-            if (touristAttraction.getName().equalsIgnoreCase(name)) {
-                touristAttraction.setDescription(description);
-                return;
-            }
-        }
-    }
-
-
-
-   /* public void edit(String name, String description, String city, List<String> tagList) {
+   public void edit(String name, String description, String city, List<String> tagList) {
         for (TouristAttraction touristAttraction : data) {
             if (touristAttraction.getName().equalsIgnoreCase(name)) {
                 touristAttraction.setDescription(description);
@@ -61,19 +50,7 @@ public class TouristRepository {
         }
     }
 
-    */
-
     public void update(TouristAttraction touristAttraction) {
-        for (TouristAttraction attraction : data) {
-            if (touristAttraction.getName().equals(attraction.getName())) {
-                touristAttraction.setDescription(attraction.getDescription());
-            }
-        }
-    }
-
-
-
-    /*public void update(TouristAttraction touristAttraction) {
         for (TouristAttraction attraction : data) {
             if (attraction.getName().equals(touristAttraction.getName())) {
                 attraction.setDescription(touristAttraction.getDescription());
@@ -83,8 +60,6 @@ public class TouristRepository {
             }
         }
     }
-
-     */
 
     public void delete(TouristAttraction touristAttraction) {
         data.removeIf(attraction -> attraction.getName().equals(touristAttraction.getName()));
