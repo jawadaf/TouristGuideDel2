@@ -8,13 +8,12 @@
 <body>
 
 <h1>Edit attraction</h1>
-<form action="/attractions/edit/" method="post">
+<form action="/attractions/update" method="post">
     <ul>
         <li>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name"/>
         </li>
-
         <li>
             <label for="description">Description:</label>
             <input type="text" id="description" name="description"/>
@@ -37,7 +36,7 @@
         </div>
     </fieldset>
 
-    <button type="submit">Add attraction</button>
+    <button type="submit">Update attraction</button>
     <button><a href="http://localhost:8080/attractions" type="submit">Regret</a></button>
 </form>
 

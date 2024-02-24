@@ -37,11 +37,11 @@
                 </a>
             </td>
             <td>
-                <a>
-                    <form action="/attractions" method="post">
-                        <button type="submit"><a th:href="'/attractions/edit/'+ ${attraction.name}">Edit</a></button>
-                    </form>
+            <td>
+                <a th:href="'/attractions/edit/'+ ${attraction.name}">
+                    <button type="button">Edit</button>
                 </a>
+            </td>
             </td>
         </tr>
     </tbody>

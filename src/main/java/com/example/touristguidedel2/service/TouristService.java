@@ -27,13 +27,14 @@ public class TouristService {
         return touristAttraction;
     }
 
+    // måske problemet ligger her, fordi "save" er grå, hvilket betyder den ikke bliver brugt.
     public void save(TouristAttraction touristAttraction) {
         touristRepository.save(touristAttraction);
     }
 
     public TouristAttraction edit(String name, String description, String city, List<String> tagList) {
         touristRepository.edit(name, description, city, tagList);
-        return new TouristAttraction(name, description, city, tagList);
+        return touristRepository.getByName(name);
     }
 
     public void update(TouristAttraction touristAttraction) {

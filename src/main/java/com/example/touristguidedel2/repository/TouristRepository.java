@@ -33,11 +33,10 @@ public class TouristRepository {
         return touristAttraction;
     }
 
-    public TouristAttraction save(TouristAttraction touristAttraction) {
+    public void save(TouristAttraction touristAttraction) {
         if (touristAttraction != null) {
-            data.contains(touristAttraction);
+            data.add(touristAttraction);
         }
-        return touristAttraction;
     }
 
     public void edit(String name, String description, String city, List<String> tagList) {
@@ -49,6 +48,21 @@ public class TouristRepository {
         }
     }
 
+
+
+   /* public void edit(String name, String description, String city, List<String> tagList) {
+        for (TouristAttraction touristAttraction : data) {
+            if (touristAttraction.getName().equalsIgnoreCase(name)) {
+                touristAttraction.setDescription(description);
+                touristAttraction.setCity(city);
+                touristAttraction.setTagList(tagList);
+                return;
+            }
+        }
+    }
+
+    */
+
     public void update(TouristAttraction touristAttraction) {
         for (TouristAttraction attraction : data) {
             if (touristAttraction.getName().equals(attraction.getName())) {
@@ -57,13 +71,28 @@ public class TouristRepository {
         }
     }
 
+
+
+    /*public void update(TouristAttraction touristAttraction) {
+        for (TouristAttraction attraction : data) {
+            if (attraction.getName().equals(touristAttraction.getName())) {
+                attraction.setDescription(touristAttraction.getDescription());
+                attraction.setCity(touristAttraction.getCity());
+                attraction.setTagList(touristAttraction.getTagList());
+                return;
+            }
+        }
+    }
+
+     */
+
     public void delete(TouristAttraction touristAttraction) {
         data.removeIf(attraction -> attraction.getName().equals(touristAttraction.getName()));
     }
 
     public List<String> getNameByTag() {
-        List<String>allTags = new ArrayList<>(List.of("Biograf", "Bar", "Museum", "Tivoli", "Park", "Børnevenlig"));
-    return allTags;
+        List<String> allTags = new ArrayList<>(List.of("Biograf", "Bar", "Museum", "Tivoli", "Park", "Børnevenlig"));
+        return allTags;
     }
 
     public List<String> getCities() {

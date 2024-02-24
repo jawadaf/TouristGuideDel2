@@ -32,15 +32,15 @@
 
     <fieldset>
         <legend>Tags</legend>
-        <div th:each="tag : ${tags}">
-            <input type="checkbox" id="tags" name="tags" th:value="${tag}" th:text="${tag}"><br>
-        </div>
-
+            <div th:each="tag : ${tags}">
+                <input type="checkbox" id="tags" name="tags" th:value="${tag}" th:text="${tag}"><br>
+            </div>
     </fieldset>
 
     <button type="submit">Add attraction</button>
     <button><a href="http://localhost:8080/attractions" type="submit">Regret</a></button>
 </form>
+
 
 </body>
 </html>
