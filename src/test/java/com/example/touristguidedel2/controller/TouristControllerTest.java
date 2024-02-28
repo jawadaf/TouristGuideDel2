@@ -8,6 +8,7 @@ class TouristControllerTest {
 
     @Test
     void getAll() {
+
     }
 
     @Test

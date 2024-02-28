@@ -33,7 +33,7 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Publish Test Report
       if: succes() || failure()
-      uses: scacap/action-surefire-report@vl
+      uses: scacap/action-surefire-report@v1
 
 
   
