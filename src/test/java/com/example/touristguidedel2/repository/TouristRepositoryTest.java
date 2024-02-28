@@ -1,19 +1,28 @@
 package com.example.touristguidedel2.repository;
 
+import com.example.touristguidedel2.model.TouristAttraction;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class TouristRepositoryTest {
 
+    TouristRepository touristRepository = new TouristRepository();
+    TouristAttraction touristAttraction = new TouristAttraction("Jawad", "Ali", "København", List.of("University", "Programming"));
+
     @Test
     void getAll() {
         //Arrange
-
+        List<TouristAttraction> actualList = touristRepository.getAll();
 
         //Act
+        actualList.equals(touristRepository.getAll());
 
         //Assert
+        int expected = 3;
+        assertEquals(expected, actualList.size());
 
     }
 
@@ -30,10 +39,14 @@ class TouristRepositoryTest {
     @Test
     void addAttraction() {
         //Arrange
+        touristRepository.addAttraction(touristAttraction);
 
         //Act
+        List<TouristAttraction> dataList = touristRepository.getAll();
 
         //Assert
+        int expected = 4;
+        assertEquals(expected, dataList.size());
     }
 
     @Test
