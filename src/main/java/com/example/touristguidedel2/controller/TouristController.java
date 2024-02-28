@@ -24,6 +24,7 @@ public class TouristController {
 
      */
 
+
     @GetMapping("")
     public String getAll(Model model) {
         model.addAttribute("attractions", touristService.getAll());
@@ -56,11 +57,10 @@ public class TouristController {
 
     @GetMapping("/edit/{name}")
     public String edit(@PathVariable String name, Model model) {
-        TouristAttraction attraction = touristService.getByName(name);
-        model.addAttribute("attraction", attraction);
+        model.addAttribute("attraction", touristService.getByName(name));
         model.addAttribute("cities", touristService.getCities());
         model.addAttribute("tags", touristService.getNameByTag());
-        return "editAttraction";
+        return "updateAttraction";
     }
 
     @PostMapping("/update")
