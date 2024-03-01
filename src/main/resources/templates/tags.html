@@ -16,7 +16,7 @@
         <th>Tags:</th>
     </tr>
 
-    <tr th:each="tag : ${tagList}">
+    <tr th:each="tag : ${attraction.getTagList()}">
         <td th:text="${tag}"></td>
     </tr>
 </table>
