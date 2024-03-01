@@ -49,7 +49,7 @@ class TouristRepositoryTest {
         assertEquals(expected, dataList.size());
     }
 
-    @Test
+   /* @Test
     void save() {
         //Arrange
 
@@ -58,20 +58,27 @@ class TouristRepositoryTest {
         //Assert
     }
 
-    @Test
+    */
+
+    /*@Test
     void edit() {
         //Arrange
+
 
         //Act
 
         //Assert
     }
 
+     */
+
     @Test
     void update() {
         //Arrange
+        touristRepository.update(touristAttraction);
 
         //Act
+
 
         //Assert
     }
@@ -80,10 +87,14 @@ class TouristRepositoryTest {
     void delete() {
         //Arrange
 
+
         //Act
+
 
         //Assert
     }
+
+
 
     @Test
     void getNameByTag() {
