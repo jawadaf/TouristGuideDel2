@@ -42,10 +42,9 @@
 
         @GetMapping("/add")
         public String addAttraction(Model model) {
-            List<String> allTags = Arrays.asList("Biograf", "Bar", "Museum", "Tivoli", "Park", "Børnevenlig");
             model.addAttribute("attractions", new TouristAttraction());
             model.addAttribute("city", touristService.getCities());
-            model.addAttribute("tags", allTags);
+            model.addAttribute("tags", touristService.getNameByTag());
             return "addAttraction";
         }
 
@@ -58,8 +57,8 @@
         @GetMapping("/edit/{name}")
         public String edit(@PathVariable String name, Model model) {
             model.addAttribute("attraction", touristService.getByName(name));
-            model.addAttribute("cities", touristService.getCities());
-            model.addAttribute("tags", touristService.getNameByTag());
+            model.addAttribute("city", touristService.getCities());
+            model.addAttribute("tags",  touristService.getNameByTag());
             return "updateAttraction";
         }
 

@@ -22,20 +22,21 @@
     </ul>
 
 
+
+
     <fieldset>
         <legend>City</legend>
         <p>
             <select id="city" name="city">
-                <option th:each="city : ${city}" th:value="${city}" th:text="${city}"></option>
+                <option th:value="${city}" th:each="city : ${city}"  th:text="${city}"></option>
             </select><br>
         </p>
     </fieldset>
 
     <!-- kommentar -->
 
-
     <fieldset>
-        <legend>Tags</legend>
+        <label>Tags</label>
         <div th:each="tag : ${tags}">
             <input type="checkbox" id="tags" name="tags" th:value="${tag}" th:text="${tag}"><br>
         </div>
