@@ -27,7 +27,6 @@ public class TouristService {
         return touristAttraction;
     }
 
-    // måske problemet ligger her, fordi "save" er grå, hvilket betyder den ikke bliver brugt.
     public void save(TouristAttraction touristAttraction) {
         touristRepository.save(touristAttraction);
     }

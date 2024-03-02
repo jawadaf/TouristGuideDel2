@@ -6,6 +6,7 @@
     import org.springframework.ui.Model;
     import org.springframework.web.bind.annotation.*;
 
+    import java.util.Arrays;
     import java.util.List;
 
     @Controller
@@ -41,9 +42,10 @@
 
         @GetMapping("/add")
         public String addAttraction(Model model) {
+            List<String> allTags = Arrays.asList("Biograf", "Bar", "Museum", "Tivoli", "Park", "Børnevenlig");
             model.addAttribute("attractions", new TouristAttraction());
             model.addAttribute("city", touristService.getCities());
-            model.addAttribute("tags", touristService.getNameByTag());
+            model.addAttribute("tags", allTags);
             return "addAttraction";
         }
 

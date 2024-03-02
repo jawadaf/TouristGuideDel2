@@ -9,11 +9,11 @@
 <body>
 
 <h1>Edit attraction</h1>
-<form action="/attractions/update" method="post" th:object="${attraction}">
+<form action="/attractions/update" method="post" th:object="${attractions}">
     <ul>
         <li>
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" th:value="${attraction.name}" readonly> <br/>
+            <input type="text" id="name" name="name" th:value="${attraction.name}" readonly>
         </li>
         <li>
             <label for="description">Description:</label>

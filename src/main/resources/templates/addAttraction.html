@@ -9,7 +9,7 @@
 <body>
 
 <h1>Add attraction</h1>
-<form action="/attractions/save" method="post">
+<form action="/attractions/save" method="post"  th:object="${attractions}">
     <ul>
         <li>
             <label for="name">Name:</label>
@@ -32,9 +32,10 @@
     </fieldset>
 
     <fieldset>
-        <legend>Tags</legend>
+        <label>Tags:</label>
         <div th:each="tag : ${tags}">
-            <input type="checkbox" id="tags" name="attraction" th:value="${tag}" th:text="${tag}"><br>
+            <input type="checkbox" th:field="*{tagList}" th:value="${tag}">
+            <label th:text="${tag}"></label>
         </div>
     </fieldset>
 
