@@ -32,7 +32,9 @@
             <td>
                 <a>
                 <form action="/attractions" method="get">
-                    <button type="submit"><a th:href="'/attractions/delete/'+ ${attraction.name}">Delete</a></button>
+                    <button type="submit">
+                        <a th:href="'/attractions/delete/'+ ${attraction.name}">Delete</a>
+                    </button>
                 </form>
                 </a>
             </td>

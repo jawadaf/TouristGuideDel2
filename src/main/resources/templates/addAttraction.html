@@ -25,7 +25,11 @@
         <legend>City</legend>
         <p>
             <select id="city" name="city">
-                <option th:each="city : ${city}" th:value="${city}" th:text="${city}"></option>
+                <option
+                        th:each="city : ${city}"
+                        th:value="${city}"
+                        th:text="${city}">
+                </option>
             </select><br>
         </p>
     </fieldset>
@@ -34,8 +38,12 @@
     <fieldset>
         <label>Tags:</label>
         <div th:each="tag : ${tags}">
-            <input type="checkbox" th:field="*{tagList}" th:value="${tag}">
-            <label th:text="${tag}"></label>
+            <input type="checkbox"
+                   th:field="*{tagList}"
+                   th:value="${tag}">
+            <label
+                    th:text="${tag}">
+            </label>
         </div>
     </fieldset>
 
