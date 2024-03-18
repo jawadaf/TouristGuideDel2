@@ -9,7 +9,7 @@
 <body>
 
 <h1>Edit attraction</h1>
-<form action="/attractions/update" method="post" th:object="${attractions}">
+<form action="/attractions/update" method="post" th:object="${attraction}">
     <ul>
         <li>
             <label for="name">Name:</label>
@@ -17,7 +17,7 @@
         </li>
         <li>
             <label for="description">Description:</label>
-            <input type="text" id="description" name="description" th:value="${attraction.description}"/>
+            <textarea type="text" id="description" name="description" th:value="${attraction.description}"/></textarea>
         </li>
     </ul>
 
