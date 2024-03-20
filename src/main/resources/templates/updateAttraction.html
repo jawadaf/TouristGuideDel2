@@ -33,7 +33,7 @@
         </p>
     </fieldset>
 
-    <!-- kommentar -->
+    <!-- -->
 
     <!-- Metoden neden under gider ikke at tage imod -> th:field="${tagList}" -->
 
@@ -43,7 +43,8 @@
         <div th:each="tag : ${tags}">
             <input type="checkbox"
                    th:value="${tag}"
-                   th:text="${tag}" >
+                   th:checked="${attraction.tagList.contains(tag)}"/>
+            <label th:for="${'tag_' + tag}" th:text="${tag}"></label><br>
         </div>
     </fieldset>
 

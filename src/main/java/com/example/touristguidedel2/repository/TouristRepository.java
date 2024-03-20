@@ -39,7 +39,7 @@ public class TouristRepository {
         }
     }
 
-   public void edit(String name, String description, String city, List<String> tagList) {
+   /*public void edit(String name, String description, String city, List<String> tagList) {
         for (TouristAttraction touristAttraction : data) {
             if (touristAttraction.getName().equalsIgnoreCase(name)) {
                 touristAttraction.setDescription(description);
@@ -49,6 +49,8 @@ public class TouristRepository {
             }
         }
     }
+
+    */
 
     public TouristAttraction update(TouristAttraction touristAttraction) {
         for (TouristAttraction attraction : data) {

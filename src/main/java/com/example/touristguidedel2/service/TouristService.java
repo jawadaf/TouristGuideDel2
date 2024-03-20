@@ -31,13 +31,21 @@ public class TouristService {
         touristRepository.save(touristAttraction);
     }
 
-    public TouristAttraction edit(String name, String description, String city, List<String> tagList) {
+    /*public TouristAttraction edit(String name, String description, String city, List<String> tagList) {
         touristRepository.edit(name, description, city, tagList);
         return touristRepository.getByName(name);
     }
 
+     */
+
+    /*
     public void update(TouristAttraction touristAttraction) {
         touristRepository.update(touristAttraction);
+    }
+     */
+
+    public TouristAttraction update(TouristAttraction touristAttraction) {
+        return touristRepository.update(touristAttraction);
     }
 
     public void delete(String name) {
