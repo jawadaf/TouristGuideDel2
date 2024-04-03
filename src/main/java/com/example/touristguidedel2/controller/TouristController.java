@@ -55,10 +55,9 @@
          */
 
         @GetMapping("/add")
-        public String addAttraction(Model model, TouristAttraction touristAttraction) {
+        public String addAttraction(Model model) {
+            TouristAttraction touristAttraction = new TouristAttraction();
             model.addAttribute("attractions", touristAttraction);
-            repository_db.create(touristAttraction);
-            model.addAttribute("city", touristService.getCities());
             model.addAttribute("tags", touristService.getNameByTag());
             return "addAttraction";
         }
@@ -67,7 +66,7 @@
 
         @PostMapping("/save")
         public String save(@ModelAttribute TouristAttraction touristAttraction, Model model) {
-            model.addAttribute("add", touristService.addAttraction(touristAttraction));
+            repository_db.create(touristAttraction);
             return "redirect:/attractions";
         }
 

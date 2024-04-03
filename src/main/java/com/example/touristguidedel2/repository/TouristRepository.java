@@ -10,10 +10,7 @@ public class TouristRepository {
 
 
 
-    private final List<TouristAttraction> touristAttractions = new ArrayList<>(List.of(
-            new TouristAttraction("Computer", "Programming", "København", List.of("Java", "JavaScript", "Python")),
-            new TouristAttraction("Tivoli", "Forlystelses park midt i København", "Rådhuspladsen", List.of("Restaurant", "Koncert", "Bar")),
-            new TouristAttraction("ZOO", "Europas bedste zoo", "Zimbabwe", List.of("Animals", "Nature", "Food"))));
+    private final List<TouristAttraction> touristAttractions = new ArrayList<>();
 
 
     public List<TouristAttraction> getAll() {

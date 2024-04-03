@@ -9,11 +9,14 @@ public class TouristAttraction {
     private List<String> tagList;
     private int id;
 
-    public TouristAttraction(String name, String description, String city, List<String> tagList) {
+   /* public TouristAttraction(String name, String description, String city, List<String> tagList) {
         this.name = name;
         this.description = description;
         this.city = city;
         this.tagList = tagList;
+    } */
+    public TouristAttraction() {
+
     }
 
     public TouristAttraction(int id, String name, String description, String city) {
