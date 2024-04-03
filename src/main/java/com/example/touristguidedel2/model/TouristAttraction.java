@@ -7,6 +7,7 @@ public class TouristAttraction {
     private String description;
     private String city;
     private List<String> tagList;
+    private int id;
 
     public TouristAttraction(String name, String description, String city, List<String> tagList) {
         this.name = name;
@@ -15,9 +16,16 @@ public class TouristAttraction {
         this.tagList = tagList;
     }
 
-    public TouristAttraction() {
+    public TouristAttraction(int id, String name, String description, String city) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.city = city;
     }
 
+    public int getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -33,6 +41,10 @@ public class TouristAttraction {
 
     public List<String> getTagList() {
         return tagList;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setName(String name) {

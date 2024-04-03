@@ -44,14 +44,15 @@
             <input type="checkbox"
                    th:value="${tag}"
                    th:checked="${attraction.tagList.contains(tag)}"/>
-            <label th:for="${'tag_' + tag}" th:text="${tag}"></label><br>
+            <label th:for="${'tag' + tag}" th:text="${tag}"></label><br>
         </div>
     </fieldset>
 
-
+    <!--   -->
 
     <button type="submit">Update attraction</button>
     <button><a href="http://localhost:8080/attractions" type="submit">Regret</a></button>
+
 </form>
 
 </body>

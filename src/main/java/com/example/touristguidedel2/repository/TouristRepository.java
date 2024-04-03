@@ -7,20 +7,21 @@ import java.util.*;
 
 @Repository
 public class TouristRepository {
-    private List<TouristAttraction> data = new ArrayList<>();
 
-    public TouristRepository() {
-        data.add(new TouristAttraction("Computer", "Programming", "København", List.of("Java", "JavaScript", "Python")));
-        data.add(new TouristAttraction("Tivoli", "Forlystelses park midt i København", "Rådhuspladsen", List.of("Restaurant", "Koncert", "Bar")));
-        data.add(new TouristAttraction("ZOO", "Europas bedste zoo", "Zimbabwe", List.of("Animals", "Nature", "Food")));
-    }
+
+
+    private final List<TouristAttraction> touristAttractions = new ArrayList<>(List.of(
+            new TouristAttraction("Computer", "Programming", "København", List.of("Java", "JavaScript", "Python")),
+            new TouristAttraction("Tivoli", "Forlystelses park midt i København", "Rådhuspladsen", List.of("Restaurant", "Koncert", "Bar")),
+            new TouristAttraction("ZOO", "Europas bedste zoo", "Zimbabwe", List.of("Animals", "Nature", "Food"))));
+
 
     public List<TouristAttraction> getAll() {
-        return data;
+        return touristAttractions;
     }
 
     public TouristAttraction getByName(String name) {
-        for (TouristAttraction touristAttraction : data) {
+        for (TouristAttraction touristAttraction : touristAttractions) {
             if (touristAttraction.getName().equals(name)) {
                 return touristAttraction;
             }
@@ -29,17 +30,14 @@ public class TouristRepository {
     }
 
     public TouristAttraction addAttraction(TouristAttraction touristAttraction) {
-        data.add(touristAttraction);
+        touristAttractions.add(touristAttraction);
         return touristAttraction;
     }
 
-    public void save(TouristAttraction touristAttraction) {
-        if (touristAttraction != null) {
-            data.add(touristAttraction);
-        }
-    }
 
-   /*public void edit(String name, String description, String city, List<String> tagList) {
+
+
+    /*public void edit(String name, String description, String city, List<String> tagList) {
         for (TouristAttraction touristAttraction : data) {
             if (touristAttraction.getName().equalsIgnoreCase(name)) {
                 touristAttraction.setDescription(description);
@@ -50,31 +48,39 @@ public class TouristRepository {
         }
     }
 
-    */
+     */
+
 
     public TouristAttraction update(TouristAttraction touristAttraction) {
-        for (TouristAttraction attraction : data) {
+        for (TouristAttraction attraction : touristAttractions) {
             if (attraction.getName().equals(touristAttraction.getName())) {
                 attraction.setDescription(touristAttraction.getDescription());
                 attraction.setCity(touristAttraction.getCity());
                 attraction.setTagList(touristAttraction.getTagList());
             }
+
         }
         return touristAttraction;
     }
 
+
+
+
     public void delete(TouristAttraction touristAttraction) {
-        data.removeIf(attraction -> attraction.getName().equals(touristAttraction.getName()));
+        touristAttractions.removeIf(attraction -> touristAttraction.getName().equals(touristAttraction.getName()));
     }
 
     public List<String> getNameByTag() {
-        List<String> allTags = new ArrayList<>(List.of("Biograf", "Bar", "Museum", "Tivoli", "Park", "Børnevenlig"));
+        List<String> allTags = new ArrayList<>(List.of("Java", "JavaScript", "Python", "Restaurant", "Koncert", "Bar", "Animals", "Nature", "Food"));
         return allTags;
     }
 
+
+
+
     public List<String> getCities() {
         List<String> cityList = new ArrayList<>();
-        for (TouristAttraction touristAttraction : data) {
+        for (TouristAttraction touristAttraction : touristAttractions) {
             cityList.add(touristAttraction.getCity());
         }
         return cityList;
