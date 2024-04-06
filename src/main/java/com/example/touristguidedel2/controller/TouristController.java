@@ -7,8 +7,6 @@
     import org.springframework.ui.Model;
     import org.springframework.web.bind.annotation.*;
 
-    import java.util.ArrayList;
-    import java.util.Arrays;
     import java.util.List;
 
     @Controller
@@ -44,6 +42,8 @@
             }
         }
 
+
+
         /*@GetMapping("/add")
         public String addAttraction(Model model) {
             model.addAttribute("attractions", new TouristAttraction());
@@ -70,8 +70,6 @@
             return "redirect:/attractions";
         }
 
-
-
         @GetMapping("/edit/{name}")
         public String edit(@PathVariable String name, Model model) {
             model.addAttribute("attraction", touristService.getByName(name));
@@ -86,18 +84,6 @@
             touristService.update(touristAttraction);
             return "redirect:/attractions";
         }
-
-
-
-
-        /*
-        @PostMapping("/update")
-        public String update(@ModelAttribute String name, String description, String city, List<String> tagList) {
-            touristService.edit(name, description, city, tagList);
-            return "redirect:/attractions";
-        }
-
-         */
 
 
         @GetMapping("/delete/{id}")

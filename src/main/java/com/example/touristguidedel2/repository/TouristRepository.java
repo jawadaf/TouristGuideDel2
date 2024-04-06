@@ -26,26 +26,12 @@ public class TouristRepository {
         return null;
     }
 
+
+
     public TouristAttraction addAttraction(TouristAttraction touristAttraction) {
         touristAttractions.add(touristAttraction);
         return touristAttraction;
     }
-
-
-
-
-    /*public void edit(String name, String description, String city, List<String> tagList) {
-        for (TouristAttraction touristAttraction : data) {
-            if (touristAttraction.getName().equalsIgnoreCase(name)) {
-                touristAttraction.setDescription(description);
-                touristAttraction.setCity(city);
-                touristAttraction.setTagList(tagList);
-                return;
-            }
-        }
-    }
-
-     */
 
 
     public TouristAttraction update(TouristAttraction touristAttraction) {
@@ -59,8 +45,6 @@ public class TouristRepository {
         }
         return touristAttraction;
     }
-
-
 
 
     public void delete(TouristAttraction touristAttraction) {

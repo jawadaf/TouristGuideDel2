@@ -25,25 +25,16 @@ public class TouristService {
     }
 
 
-
     public TouristAttraction addAttraction(TouristAttraction touristAttraction) {
         touristRepository.addAttraction(touristAttraction);
         return touristAttraction;
     }
 
 
-    /*public TouristAttraction edit(String name, String description, String city, List<String> tagList) {
-        touristRepository.edit(name, description, city, tagList);
-        return touristRepository.getByName(name);
-    }
-
-     */
 
     public TouristAttraction update(TouristAttraction touristAttraction) {
         return touristRepository.update(touristAttraction);
     }
-
-
 
 
     public void delete(String name) {
@@ -52,6 +43,7 @@ public class TouristService {
             touristRepository.delete(touristAttraction);
         }
     }
+
 
     public List<String> getNameByTag() {
         return touristRepository.getNameByTag();

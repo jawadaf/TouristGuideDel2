@@ -63,6 +63,22 @@ public class Repository_DB {
         }
     }
 
+    public void update(TouristAttraction touristAttraction) {
+        String SQL = "UPDATE tg.touristAttraction SET name = ?, description = ?, city = ? WHERE id = ?;";
+        try {
+            Connection connection = DriverManager.getConnection(url, name, password);
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement.setString(1, touristAttraction.getName());
+            preparedStatement.setString(2, touristAttraction.getDescription());
+            preparedStatement.setString(3, touristAttraction.getCity());
+            preparedStatement.setInt(4, touristAttraction.getId());
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public List<TouristAttraction> delete(int id) {
         List<TouristAttraction> touristAttractions = new ArrayList<>();
         String SQL = "DELETE FROM tg.touristguiden where id=?;";
